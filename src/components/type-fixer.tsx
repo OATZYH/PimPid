@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Clipboard, Sparkles, ArrowLeftRight } from "lucide-react";
 import { convertText } from "@/lib/convert-text";
@@ -19,7 +18,7 @@ export function TypeFixer() {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [layoutDirection, setLayoutDirection] = useState("en-to-th");
-  const [autoDetect, setAutoDetect] = useState(false);
+  const [autoDetect] = useState(false);
 
   const handleConvert = () => {
     const result = convertText(inputText, layoutDirection);
@@ -46,7 +45,7 @@ export function TypeFixer() {
     if (autoDetect && inputText) {
       handleConvert();
     }
-  }, [autoDetect, inputText, layoutDirection]);
+  }, [autoDetect, inputText, layoutDirection, handleConvert]);
 
   return (
     <div className="container px-4 py-8 mx-auto max-w-6xl">

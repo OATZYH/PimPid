@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 interface LanguageProviderProps {
   children: ReactNode;
   defaultLocale: string;
-  defaultMessages: any;
+  defaultMessages: Record<string, unknown>;
 }
 
 export default function LanguageProvider({
