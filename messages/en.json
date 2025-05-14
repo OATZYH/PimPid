@@ -1,0 +1,28 @@
+{
+  "header": {
+    "title": "PimPid",
+    "subtitle": "Fix mistyped Thai/English text from wrong keyboard layout"
+  },
+  "layout": {
+    "swapButton": "Swap Layout",
+    "originalText": "Original Text",
+    "fixedOutput": "Fixed Output",
+    "inputPlaceholder": "Type or paste your text here...",
+    "engLabel": "ENG",
+    "thaiLabel": "THAI"
+  },
+  "actions": {
+    "copyButton": "Copy",
+    "copySuccess": "Copied!, Text copied to clipboard",
+    "convertButton": "Convert",
+    "autoDetect": "Auto detect layout (coming soon)"
+  },
+  "note": "This tool is for converting text between English and Thai keyboard layouts.",
+  "footer": {
+    "madeWith": "Made with ❤️ using Next.js + ShadCN"
+  },
+  "languageSwitcher": {
+    "switchTo": "Switch to Thai",
+    "tooltip": "Switch to Thai"
+  }
+}
