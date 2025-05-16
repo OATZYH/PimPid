@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,10 +20,10 @@ export function TypeFixer() {
   const [layoutDirection, setLayoutDirection] = useState("en-to-th");
   const [autoDetect] = useState(false);
 
-  const handleConvert = () => {
+  const handleConvert = useCallback(() => {
     const result = convertText(inputText, layoutDirection);
     setOutputText(result);
-  };
+  }, [inputText, layoutDirection]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(outputText);
@@ -45,7 +45,7 @@ export function TypeFixer() {
     if (autoDetect && inputText) {
       handleConvert();
     }
-  }, [autoDetect, inputText, layoutDirection, handleConvert]);
+  }, [autoDetect, inputText, handleConvert]);
 
   return (
     <div className="container px-4 py-8 mx-auto max-w-6xl">
